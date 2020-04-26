@@ -15,4 +15,4 @@ RUN wget -O zdaemon-latest.tgz http://downloads.zdaemon.org/zserv11012_linux26.t
 RUN tar zfx zdaemon-latest.tgz --strip 1
 
 # Run
-CMD ./zserv
+CMD ./zserv -basedir "/zdaemon/game-wads" -waddir "/zdaemon/map-wads" -iwad $IWAD -file $PWADS
