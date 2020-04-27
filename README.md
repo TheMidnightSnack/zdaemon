@@ -1,5 +1,6 @@
 # zdaemon
 
+### Run from your zdaemon file directory
 ```
 sudo docker run -it \
     --name zdaemon \
@@ -7,9 +8,9 @@ sudo docker run -it \
     -e CFG=dm.cfg \
     -e IWAD=doom2.wad \
     -e PWADS=dwango6.wad \
-    -v /home/ostrichbot/zdaemon/cfg:/zdaemon/cfg \
-    -v /home/ostrichbot/zdaemon/pwads:/zdaemon/pwads \
-    -v /home/ostrichbot/zdaemon/iwads:/zdaemon/iwads \
+    -v $(pwd)/cfg:/zdaemon/cfg \
+    -v $(pwd)/pwads:/zdaemon/pwads \
+    -v $(pwd)/iwads:/zdaemon/iwads \
     --restart=unless-stopped \
     ostrichbot/zdaemon
 ```
