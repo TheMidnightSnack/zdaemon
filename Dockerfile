@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y libc6-i386 libstdc++6:i386 wget tar
 WORKDIR /zdaemon
 
 # Download
-RUN wget -O zdaemon-latest.tgz http://downloads.zdaemon.org/zserv11025_linux26.tgz
+RUN /bin/sh -c "VERSION=$(wget -qO- https://downloads.zdaemon.org/version.txt | head -n 1 | tr -d '. \r\n') && \
+    wget -O zdaemon-latest.tgz http://downloads.zdaemon.org\${VERSION}_linux26.tgz"
 
 # Extract
 RUN tar zfx zdaemon-latest.tgz --strip 1
