@@ -10,7 +10,7 @@ WORKDIR /zdaemon
 
 # Download
 RUN /bin/sh -c "VERSION=$(wget -qO- http://downloads.zdaemon.org/version.txt | head -n 1 | tr -d '. \r\n') && \
-    wget -O zdaemon-latest.tgz http://downloads.zdaemon.org\${VERSION}_linux26.tgz"
+    wget -O zdaemon-latest.tgz http://downloads.zdaemon.org/zserv${VERSION}_linux26.tgz"
 
 # Extract
 RUN tar zfx zdaemon-latest.tgz --strip 1
